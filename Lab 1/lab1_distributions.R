@@ -95,7 +95,14 @@ qqplot(EPI_data$AIR_E, EPI_data$AIR_H, xlab = "Q-Q comparing AIR_E and AIR_H")
 #Biodiversity
 #Has 0's which doesn't make sense, possibly a mistake. Filter out before using
 #Come back to this after I learn how to filter
-
+EPI_data$BIODIVERSITY
+biofiltered <- EPI_data[EPI_data$BIODIVERSITY != 0,]
+biofiltered
+biofiltered$BIODIVERSITY
+summary()
+boxplot(EPI_data$EPI, biofiltered$BIODIVERSITY)
+boxplot(biofiltered$EPI, biofiltered$BIODIVERSITY)
+qqplot(EPI_data$EPI, biofiltered$BIODIVERSITY)
 
 
 #Comparing 2010 to 2016 EPI
